@@ -1,0 +1,62 @@
+<html ng-app="Moedas">
+
+<head>
+    <title>Test Money</title>
+    <!-- Lib StyleSheet Files -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lib Javascript Files -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+    .bg-warning {
+        background-color: #fcf8e3;
+        max-width: 480px;
+        text-align: center;
+        margin: 0 auto 20px;
+        padding: 15px;
+    }
+    </style>
+</head>
+
+<body ng-controller="MoedasController">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <a class="navbar-brand" href="/">LoanDolphin</a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-md-12">
+                    <div class="form-group">
+                      <p class="bg-warning">{{ title }}</p>
+                    </div>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <select ng-model="m1" class="form-control">
+                                <option value="" disabled="" selected="">Select Money</option>
+                                <option ng-repeat="m in moedas" value="{{m}}">{{m}}</option>
+                            </select>
+                            <input ng-model="valMoney" type="number" class="form-control" placeholder="Value">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName2">to</label>
+                        </div>
+                        <div class="form-group">
+                            <select ng-model="m2" class="form-control">
+                                <option value="" disabled="" selected="">Select Money</option>
+                                <option ng-repeat="m in moedas" value="{{m}}">{{m}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default" ng-click="clickCalc();">Calc</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript Files -->
+    <script src="js/angular/main.js"></script>
+    <script src="js/angular/controller/MoedasController.js"></script>
+</body>
+
+</html>
